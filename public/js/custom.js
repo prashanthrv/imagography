@@ -30,14 +30,32 @@ function reloadListeners() {
 	});
 }
 function deleteImage(imageName) {
-	$.ajax({
-		url:'/api/deleteImage?imageName='+imageName,
-		method:'GET',
-		async:false,
-		success: function(data) {
-			reloadImages("");	
-		}
-	});
+	BootstrapDialog.show({
+			title: 'Delete',
+            message: 'Are you sure want to delete this picture??',
+            type: BootstrapDialog.TYPE_DANGER,
+            buttons: [{
+                label: 'No',
+                action: function(dialogRef) {
+                    dialogRef.close();
+                }
+            },
+            {
+            	label:'Yes',
+            	cssClass: 'btn-danger',
+            	action: function(dialogRef){
+            		$.ajax({
+						url:'/api/deleteImage?imageName='+imageName,
+						method:'GET',
+						async:false,
+						success: function(data) {
+							reloadImages("");
+							dialogRef.close();	
+						}
+					});
+            	}
+            }]
+        });
 }
 function reloadImages(searchTerm) {
 	$.ajax({
