@@ -1,0 +1,7 @@
+{
+  "name": "Imagography",
+  "description": "Image uploader",
+  "repository": "https://github.com/prashanthrv/imagography",
+  "logo": "http://node-js-sample.herokuapp.com/node.svg",
+  "keywords": ["node", "express", "static"]
+}
