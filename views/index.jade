@@ -1,0 +1,38 @@
+extends layout
+
+block content
+  div(class="row")
+    div(class="col-md-12")
+      nav(class="navbar navbar-inverse navbar-embossed", role="navigation")
+        div(class="navbar-header")
+          button(type="button", class="navbar-toggle", data-toggle="collapse", data-target="#navbar-collapse-01")
+            span(class="sr-only")
+              |Toggle navigation
+          a(class="navbar-brand" href="#", style="color:white; font-size:20px;")
+            |Imagography
+          form(class="navbar-form navbar-right", action="#", role="search", style="margin-right:10px; position:absolute; right:0px;")
+            div(class="form-group")
+              div(class="input-group")
+                input(class="form-control", id="navbarInput-01", type="search", placeholder="Search" style="background-color:white;")
+                span(class="input-group-btn")
+                  button(type="submit", class="btn", style="background-color:#1abc9c;")
+                    span(class="fui-search")
+  div(class="row")
+    div(class="col-md-12")
+      div(style="height:450px; border:1px solid rgb(158, 158, 158); border-radius:4px;")
+        div(class="row" style="height:100%;")
+          div(class="col-md-4" style="border-right:1px solid rgb(158, 158, 158); height:100%; padding-right:0px;")
+            div(onclick="clearDropImages()", style="margin-left:10px; color:red; font-size:12px; margin-top:5px; position:absolute; cursor:pointer;")
+              |Clear
+            form(enctype="multipart/form-data", method="post", action="/api/photo", class="dropzone", id="my-awesome-dropzone", style="height:100%; border:none; overflow:scroll;" )
+          div(class="col-md-8", style="overflow:scroll; height:100%;")
+            each val in images
+              div(class="nail_temp dropzone", style="min-height:0px; padding:0px 0px 0px 0px; border:none;")
+                div(class="nailthumb-container dz-preview dz-processing dz-success dz-complete dz-image-preview")
+                  a(href=val.path,data-lightbox="image-1",data-title=val.imageName,class="dz-image")
+                    img(src=val.path, height="120")
+                div(class="whiteHover", style="display:none;")
+                  span(class="glyphicon glyphicon-trash", id="trashHover", style="left:15px;", onclick="deleteImage('"+val.imageName+"');")
+                  span(class="fui-facebook", id="heartHover", style="left:40px; top:2px;", onclick="fbShare('"+val.path+"', 'Fb Share', 'Facebook share popup', 'http://goo.gl/dS52U', 520, 350)")
+                  span(class="fui-google-plus", id="heartHover", style="left:65px;top:2px;", onclick="googleShare('"+val.path+"', 'Google Share', 'Google share popup', '', 520, 350)")
+                  span(class="fui-twitter", id="heartHover", style="left:90px;top:2px;", onclick="twitterShare('"+val.path+"', 'Twitter Share', 'Twitter share popup', '', 520, 350)")             

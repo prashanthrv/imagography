@@ -1,0 +1,48 @@
+.dz-message{
+	font-size:25px;
+}
+.nailthumb-container{
+	clear: none;
+	float:left;
+	border-radius: 25px;
+	margin-top:10px;
+	cursor: pointer;
+	margin-right:10px;
+}
+.nailthumb-container img{
+	border-radius: 25px;
+}
+.whiteHover{
+	height: 30px;
+	width: 120px;
+	position: relative;
+	top:10px;
+	border-bottom: 1px solid white;
+	text-align: center;
+	color:white;
+	z-index: 9999;
+	margin-left: 15px;
+	margin-top:5px;
+}
+.whiteHover span{
+	position: absolute;
+	top:8px;
+	cursor: pointer;
+}
+.nail_temp{
+	height: 120px;
+	width:120px;
+	clear:none;
+	float:left;
+	margin-right: 10px;
+	margin-top: 10px;
+}
+#trashHover:hover{
+	color: #E74C3C;
+}
+#heartHover:hover{
+	color: #1abc9c;
+}
+#shareHover:hover{
+	color: #3498DB;
+}

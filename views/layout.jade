@@ -1,0 +1,22 @@
+doctype html
+html
+  head
+    title= title
+    link(rel='stylesheet', href='/stylesheets/style.css')
+    link(rel='stylesheet', href='/css/bootstrap.min.css')
+    link(rel='stylesheet', href='/css/bootstrap-theme.min.css')
+    link(href="/dist/css/vendor/bootstrap.min.css", rel="stylesheet")
+    link(href="/dist/css/flat-ui.min.css" rel="stylesheet")
+    link(rel='stylesheet', href='/css/dropzone.css')
+    link(rel='stylesheet', href='/css/lightbox.css')
+    link(rel='stylesheet', href='/css/custom.css')
+    script(src="/dist/js/vendor/jquery.min.js")
+    script(type='text/javascript', src='/js/bootstrap.min.js')
+    script(type='text/javascript', src='/js/dropzone.js')
+  body
+    div(class="container")
+      block content
+    script(src="/dist/js/vendor/video.js")
+    script(src="/dist/js/flat-ui.min.js")
+    script(src="/js/lightbox.min.js")
+    script(src="/js/custom.js")
