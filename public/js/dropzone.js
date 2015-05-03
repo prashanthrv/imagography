@@ -596,6 +596,7 @@
         return function(file) {
           if (_this.getUploadingFiles().length === 0 && _this.getQueuedFiles().length === 0) {
             return setTimeout((function() {
+              reloadImages("");
               return _this.emit("queuecomplete");
             }), 0);
           }
